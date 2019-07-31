@@ -1,7 +1,7 @@
 import { Domaine } from './Domaine';
 
 export interface Expert{
-    id: string;
+    id: number;
     name: string ;
     prenom: string;
     mail : string; 
@@ -15,5 +15,6 @@ export interface Expert{
     region: string;
     ville: string;
     quartier: string;
-    img: string; 
+    img: string;
+    description : string; 
 }

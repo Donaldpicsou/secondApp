@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="home" ></ion-back-button>
+        </ion-buttons>
+        <ion-chip slot="start" outline="true"color="primary">
+          <ion-avatar>
+              <img [src]="current_expert.img">
+          </ion-avatar>
+          <ion-label style="color:aliceblue;">{{current_expert.name|uppercase}}</ion-label>
+        </ion-chip>
+        <ion-buttons slot="end">
+          <ion-button slot="icon-only" (click)="showDetails($event)">
+            <ion-icon  style="color:aliceblue;" slot="end" name="more"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <!-- <ion-title>Details</ion-title> -->
+      </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding ion-no-margin" >
+    <ion-card class="ion-no-padding ion-no-margin">
+      <img  [src]="current_expert.img">
+      <ion-card-header>
+        <ion-card-title>{{current_expert.name|uppercase}}</ion-card-title>
+        <ion-card-subtitle>{{current_expert.prenom}}</ion-card-subtitle>
+      </ion-card-header>
+  
+      <ion-card-content>
+          <ion-list>
+              <ion-item>
+                  <ion-icon slot="start" name="star" color="primary"></ion-icon>
+                  <label style="color: rgb(230, 15, 15)"> note : {{avg}}/5 </label> 
+                  <span *ngFor="let item of stars">
+                    <ion-icon slot="end" name={{item}} color="warning"></ion-icon>
+                  </span>
+                
+              </ion-item>          
+               <ion-item>
+                  <ion-icon slot="start" name="hammer" color="primary"></ion-icon>
+                  <ion-label>Secteur : {{current_expert.domain.sector}}</ion-label>
+              </ion-item>
+              <ion-item>
+                  <ion-icon slot="start" name="bulb" color="primary"></ion-icon>
+                  <ion-label>Domaine: {{current_expert.domain.title}}</ion-label>
+              </ion-item>                     
+              <ion-item (click)="callExpert(current_expert.tel1)">
+                  <ion-icon slot="start" name="call" color="primary"></ion-icon>
+                  <ion-label> {{current_expert.tel1}}</ion-label>
+              </ion-item>
+              <ion-item (click)="callExpert(current_expert.tel2)">
+                  <ion-icon slot="start" name="call" color="primary"></ion-icon>
+                  <ion-label> {{current_expert.tel2}}</ion-label>
+              </ion-item>            
+            <ion-item (click)="copyToClipboard()">
+                <ion-icon slot="start" name="mail" color="primary" ></ion-icon>
+                <ion-label> {{current_expert.mail}} <ion-icon slot="end" name="copy" color="primary"></ion-icon> </ion-label>
+            </ion-item>
+          </ion-list>
+          <i>
+            {{current_expert.description}}
+          </i>
+      </ion-card-content>
+  
+    </ion-card>
+  </ion-content>

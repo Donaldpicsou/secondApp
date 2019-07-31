@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'expert', loadChildren: './pages/expert/expert.module#ExpertPageModule' },
   { path: 'sign', loadChildren: './pages/sign/sign.module#SignPageModule' },
   { path: 'help', loadChildren: './pages/help/help.module#HelpPageModule' },
+  { path: 'expert-details/:id', loadChildren: './pages/expert-details/expert-details.module#ExpertDetailsPageModule' },
 ];
 
 @NgModule({

@@ -8,7 +8,6 @@ import {HttpClient} from '@angular/common/http';
 })
 export class LoaderService {
 
-  dataUrl: string = "assets/data/data.json";
   constructor(private http : HttpClient) { }
 
   /**

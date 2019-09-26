@@ -13,17 +13,12 @@ import { LoaderService } from 'src/app/services/loader.service';
 export class ExpertPage implements OnInit {
   url : string = "assets/data/data.json";
   datas : Observable<Expert[]>; 
-  datas$ : Observable<Expert[]>;
   total : number ;
   constructor(private navCrtl: NavController, private loadservice : LoaderService) {
   }
 
   ngOnInit() {
-    this.datas$ = this.loadservice.loadExpert(this.url);
-     //this.datas$ = this.loadservice.getData();
-    this.datas$.subscribe((res) => {
-      this.total = res.length
-    });
+    this.datas = this.loadservice.loadExpert(this.url);
   }
   
 

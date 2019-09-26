@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Expert} from './../../../modele/expert';
 import {_EXPERT_} from './../../../modele/list-experts';
 import { NavController } from '@ionic/angular';
+import { Observable } from 'rxjs';
+import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
   selector: 'app-expert',
@@ -9,13 +11,19 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./expert.page.scss'],
 })
 export class ExpertPage implements OnInit {
-
-  constructor(private navCrtl: NavController) { 
-    
+  url : string = "assets/data/data.json";
+  datas : Observable<Expert[]>; 
+  datas$ : Observable<Expert[]>;
+  total : number ;
+  constructor(private navCrtl: NavController, private loadservice : LoaderService) {
   }
 
   ngOnInit() {
-
+    this.datas$ = this.loadservice.loadExpert(this.url);
+     //this.datas$ = this.loadservice.getData();
+    this.datas$.subscribe((res) => {
+      this.total = res.length
+    });
   }
   
 

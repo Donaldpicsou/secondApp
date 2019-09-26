@@ -12,12 +12,15 @@ import { AppRoutingModule } from './app-routing.module';
 import {IonicStorageModule} from '@ionic/storage';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { AuthenticationService } from './services/authentication.service';
+import {HttpClientModule} from '@angular/common/http';
+import { LoaderService } from './services/loader.service';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), 
     AppRoutingModule,
+    HttpClientModule,
     IonicStorageModule.forRoot({
       name: '__firstappdb',
 driverOrder: ['indexeddb', 'sqlite', 'websql']
@@ -28,6 +31,7 @@ driverOrder: ['indexeddb', 'sqlite', 'websql']
     SplashScreen,
     CallNumber,
     AuthenticationService,
+    LoaderService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -12,6 +12,9 @@ import { AppRoutingModule } from './app-routing.module';
 import {IonicStorageModule} from '@ionic/storage';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { AuthenticationService } from './services/authentication.service';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +25,8 @@ import { AuthenticationService } from './services/authentication.service';
       name: '__firstappdb',
 driverOrder: ['indexeddb', 'sqlite', 'websql']
     }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [
     StatusBar,

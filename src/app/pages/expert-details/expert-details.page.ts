@@ -95,6 +95,9 @@ export class ExpertDetailsPage implements OnInit {
       console.log(star);
       return star
     }
+    showDetails(elt: any){
+      console.log("Show deltials contents");
+    }
 
 
 }

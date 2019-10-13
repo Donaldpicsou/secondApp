@@ -15,12 +15,15 @@ import { AuthenticationService } from './services/authentication.service';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+import {HttpClientModule} from '@angular/common/http';
+//import { LoaderService } from './services/loader.service';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), 
     AppRoutingModule,
+    HttpClientModule,
     IonicStorageModule.forRoot({
       name: '__firstappdb',
 driverOrder: ['indexeddb', 'sqlite', 'websql']
@@ -33,6 +36,7 @@ driverOrder: ['indexeddb', 'sqlite', 'websql']
     SplashScreen,
     CallNumber,
     AuthenticationService,
+    //LoaderService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

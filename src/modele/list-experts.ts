@@ -6,7 +6,7 @@ export const _EXPERT_ : Expert[] = [
     domain: {id: "1", title: "Tôlerie", sector:"Tercière"}, note : [3, 2, 2, 4, 5], prix : 20000,
     heure: "7h-18h", pays : "Cameroun", region: "Centre",
     ville: "Yaoundé", quartier: "Bibogbidoun", 
-    img: "./../../../assets/images/orange.jpg",
+    img: "assets/images/orange.jpg",
     description : "Voici une petite description de ma personne"},
 
     {id:2,name: "Chapman", prenom: "Tracy",
@@ -14,7 +14,7 @@ export const _EXPERT_ : Expert[] = [
     domain: {id: "1", title: "Musique", sector:"Tercière"}, note : [5, 1, 5, 4, 5], prix : 200000,
     heure: "7h-12h", pays : "USA", region: "California",
     ville: "Santa Clarita", quartier: "I don't die", 
-    img: "./../../../assets/images/goyave.jpg",
+    img: "assets/images/goyave.jpg",
     description : "Voici une petite description de ma personne"},
 
     {id:3,name: "Katino", prenom: "La katino",
@@ -22,7 +22,7 @@ export const _EXPERT_ : Expert[] = [
     domain: {id: "1", title: "Musique", sector:"Tercière"}, note : [3, 1, 1, 4, 5], prix : 25000,
     heure: "7h-14h", pays : "Cameroun", region: "Centre",
     ville: "Yaoundé", quartier: "Poto poto +",
-    img: "./../../../assets/images/mangue.jpg",
+    img: "assets/images/mangue.jpg",
     description : "Voici une petite description de ma personne"},
 
     {id:4,name: "Zozo", prenom: "Zizi",
@@ -30,6 +30,6 @@ export const _EXPERT_ : Expert[] = [
     domain: {id: "1", title: "Charcuterie", sector:"Tercière"}, note : [3, 2, 2, 4, 3], prix : 1000,
     heure: "7h-18h", pays : "Cameroun", region: "Centre",
     ville: "Yaoundé", quartier: "Bibogbidoun",
-    img: "./../../../assets/images/ananas.png",
+    img: "assets/images/ananas.png",
     description : "Voici une petite description de ma personne" }
 ]; 
